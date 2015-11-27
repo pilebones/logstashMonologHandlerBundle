@@ -1,0 +1,27 @@
+{
+  "name" : "pilebones/logstash-bundle",
+  "description" : "A Logstash handler bundle for Symfony2 MonologBundle",
+  "type" : "symfony-bundle",
+  "authors":     [
+    {
+      "name":     "Mickael FRANC",
+      "email":    "mickael.franc@gmail.com",
+      "homepage": "https://github.com/pilebones"
+    }
+  ],
+  "keywords": ["logstash", "monolog", "handler"],
+  "license" : [
+    "GNU"
+  ],
+  "require":      {
+    "php":                      ">=5.4",
+    "symfony/framework-bundle": ">=2.3",
+    "monolog/monolog": "*",
+  },
+  "autoload" : {
+    "psr-0" : {
+      "Pilebones\\LogstashBundle" : ""
+    }
+  },
+  "target-dir" : "Pilebones/LogstashBundle"
+}
