@@ -18,11 +18,9 @@ __/!\ Warning :__ Logstash must be configure with "input-tcp" with "input-codec-
 
 You can enrich log stream with some custom attributes (see bellow).
 
-## Getting started
+## Installation
 
-### From Symfony2 project
-
-In composer.json :
+Edit composer.json :
 ```yml
     [...]
     "require" : {
@@ -35,13 +33,19 @@ In composer.json :
     }],
     [...]
 ```
+
+Run composer.phar to install the bundle :
+```bash
+php composer.phar update "pilebones/logstash-bundle"
+```
+
+## Project settings
+
 In app/AppKernel : 
 
 ```php
 new Pilebones\LogstashBundle\PilebonesLogstashBundle(),
 ```
-
-### Bundle Settings
 
 In app/config/config.yml : 
 
