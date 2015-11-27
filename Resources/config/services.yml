@@ -4,6 +4,6 @@ parameters:
 services:
     pilebones_logstash.monolog.logstash_handler:
         class: "%pilebones_logstash.monolog.logstash_handler.class%"
-        arguments: ["@request_stack", "%pilebones_logstash_monolog_handler.logstash_address%", 100, true, ~ ]
+        arguments: ["@request_stack", "%pilebones_logstash.logstash_address%", 100, true, ~ ]
         calls:
             - [setFormatter, [ @monolog.formatter.json ]]
