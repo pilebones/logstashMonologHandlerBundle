@@ -14,9 +14,9 @@
     "GNU"
   ],
   "require":      {
-    "php":                      ">=5.4",
+    "php": ">=5.3.9",
     "symfony/framework-bundle": ">=2.3",
-    "monolog/monolog": "*",
+    "symfony/monolog-bundle": ">=2.4"
   },
   "autoload" : {
     "psr-0" : {

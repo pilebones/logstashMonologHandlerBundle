@@ -63,4 +63,14 @@ pilebones_logstash:
         corporate: MyOfficeName
         project: POC Sf2 vs Logstash 
         developper_name: pilebones
+
+monolog:
+    handlers:
+        main:
+			[...]
+            handler: logstash
+        logstash:
+            type: service
+            id: pilebones_logstash.monolog.logstash_handler
+            level: info
 ```
