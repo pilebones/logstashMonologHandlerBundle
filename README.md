@@ -23,7 +23,7 @@ You can enrich log stream with some custom attributes (see bellow).
 ### From Symfony2 project
 
 In composer.json :
-```json
+```yml
     [...]
     "require" : {
         [...]
@@ -47,8 +47,25 @@ In app/config/config.yml :
 
 ```yml
 imports:
-    [...]
+    # [...]
     - { resource: pilebones_logstash.yml }
+
+monolog:
+    handlers:
+        main:
+            type:         fingers_crossed
+            action_level: error
+            handler:      nested
+        nested:
+            type:  stream
+            path:  "%kernel.logs_dir%/%kernel.environment%.log"
+            level: debug
+            handler: logstash
+        console:
+            type:  console
+        logstash:
+            type: service
+            id: pilebones_logstash.monolog.logstash_handler
 ```
 
 In app/config/pilebones_logstash.yml : 
@@ -63,14 +80,4 @@ pilebones_logstash:
         corporate: MyOfficeName
         project: POC Sf2 vs Logstash 
         developper_name: pilebones
-
-monolog:
-    handlers:
-        main:
-			[...]
-            handler: logstash
-        logstash:
-            type: service
-            id: pilebones_logstash.monolog.logstash_handler
-            level: info
 ```
